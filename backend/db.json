@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "password": "12",
+      "email": "test@myges.fr",
+      "role": "student",
+      "id": 1
+    },
+    {
+      "password": "12",
+      "email": "test@myges.fr",
+      "role": "student",
+      "id": 1
+    }
+  ]
+}
