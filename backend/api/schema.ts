@@ -16,9 +16,13 @@ const courseSchema = object({
 })
 
 const studentCourseSchema = object({
-    registredAt: string().required(),
-    signedAt: string().required()
+    registeredAt: number().required(),
+    signedAt: number().required(),
+    studentId : number().required(),
+    courseId : number().required()
 })
+
+
 
 
 export {userSchema, courseSchema, studentCourseSchema}

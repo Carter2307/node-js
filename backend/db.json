@@ -10,7 +10,27 @@
       "password": "12",
       "email": "test@myges.fr",
       "role": "student",
-      "id": 1
+      "id": 2
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "Developpement web",
+      "date": "12 janvier 1990",
+      "students": [
+        1,
+        2,
+        1
+      ]
+    }
+  ],
+  "studentCourses": [
+    {
+      "courseId": 1,
+      "studentId": 2,
+      "signedAt": 1700680939876,
+      "registeredAt": 1700680095173
     }
   ]
 }
