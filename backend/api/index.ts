@@ -61,7 +61,7 @@ router.get("/courses", (req: express.Request, res: express.Response) => {
     res.send(db.courses)
 } )
 
-// -> /api/
+// -> /api/ studentCourses (GET) : Récupérer les cours d'un étudiant (id) 
 router.post("/user", async (req:express.Request, res: express.Response) => {
     const {id, role, email, password}= req.body
 
@@ -89,7 +89,7 @@ router.post("/user", async (req:express.Request, res: express.Response) => {
 
 })
 
-
+// -> /api/course (POST) : Ajouter un cours
 router.post("/course", async (req:express.Request, res: express.Response) => {
     const {title, students}= req.body
 
@@ -100,7 +100,7 @@ router.post("/course", async (req:express.Request, res: express.Response) => {
         })
     }
 
-    //Get the id of the last item of courses array and increment
+    //Créer un nouvel id pour le cours à ajouter à la base de donnée (id du dernier cours + 1)
     const id = data.courses[data.courses.length - 1].id + 1
 
    const studentsId = students.split(",").map((str: string) => parseInt(str))
@@ -110,14 +110,13 @@ router.post("/course", async (req:express.Request, res: express.Response) => {
     })
 
 
-
    data.courses.push(course)
 
     //Mettre à jour la base de donnée
     updateDatabase(data, res);
 
 })
-
+//route pour inscrire un étudiant à un cours (POST)
 router.post('/asign', async (req:express.Request, res: express.Response) => {
     const {studentId, courseId } = req.body
 
@@ -142,8 +141,7 @@ router.post('/asign', async (req:express.Request, res: express.Response) => {
     updateDatabase(data, res)
 
 })
-
-
+// route pour signer à un cours (POST) 
 router.post('/sign', (req:express.Request, res: express.Response) => {
     const {studentId, courseId } = req.body
 

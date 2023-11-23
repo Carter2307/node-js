@@ -1,5 +1,6 @@
 import { object, string, number, date,array, InferType } from 'yup';
 
+//schemas de validation des données
 
 const userSchema = object({
     id: number().required(),

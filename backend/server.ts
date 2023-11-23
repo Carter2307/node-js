@@ -5,7 +5,7 @@ const port = 3000;
 import bodyParser from 'body-parser';
 
 
-// parse application/x-www-form-urlencoded
+// parse application/json qui permet de parser les requêtes envoyées au format JSON
 app.use(bodyParser.urlencoded({ extended: false }))
 
 
@@ -22,7 +22,7 @@ app.get("/", (req: express.Request, res: express.Response)=> {
 
 
 
-
+// Démarrer le serveur
 app.listen(port, ()=> {
     console.log(`Le serveur tourne à l'adresse http://localhost:${port}`)
 })
